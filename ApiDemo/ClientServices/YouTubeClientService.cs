@@ -2,7 +2,7 @@
 {
     using Microsoft.Extensions.Options;
     using ModelsLibrary.Configurations;
-    using ModelsLibrary.YouTubeModels;
+    using ModelsLibrary.YouTubeDtos;
     using System.Text;
 
     public class YouTubeClientService : IYouTubeClientService

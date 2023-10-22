@@ -1,4 +1,4 @@
-﻿namespace ModelsLibrary.YouTubeModels
+﻿namespace ModelsLibrary.YouTubeDtos
 {
     public class Snippet
     {

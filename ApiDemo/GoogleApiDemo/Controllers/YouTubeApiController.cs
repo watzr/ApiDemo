@@ -4,7 +4,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Options;
     using ModelsLibrary.Configurations;
-    using ModelsLibrary.YouTubeModels;
+    using ModelsLibrary.YouTubeDtos;
 
     public class YouTubeApiController : Controller
     {

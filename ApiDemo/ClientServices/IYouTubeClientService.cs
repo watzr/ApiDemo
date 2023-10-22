@@ -1,6 +1,6 @@
 ﻿namespace ClientServices
 {
-    using ModelsLibrary.YouTubeModels;
+    using ModelsLibrary.YouTubeDtos;
 
     public interface IYouTubeClientService
     {
