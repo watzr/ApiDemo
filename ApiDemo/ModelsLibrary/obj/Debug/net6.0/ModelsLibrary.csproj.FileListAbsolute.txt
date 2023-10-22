@@ -1,0 +1,11 @@
+D:\My Projects\ApiDemoRepo\ApiDemo\ModelsLibrary\bin\Debug\net6.0\ModelsLibrary.deps.json
+D:\My Projects\ApiDemoRepo\ApiDemo\ModelsLibrary\bin\Debug\net6.0\ModelsLibrary.dll
+D:\My Projects\ApiDemoRepo\ApiDemo\ModelsLibrary\bin\Debug\net6.0\ModelsLibrary.pdb
+D:\My Projects\ApiDemoRepo\ApiDemo\ModelsLibrary\obj\Debug\net6.0\ModelsLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Projects\ApiDemoRepo\ApiDemo\ModelsLibrary\obj\Debug\net6.0\ModelsLibrary.AssemblyInfoInputs.cache
+D:\My Projects\ApiDemoRepo\ApiDemo\ModelsLibrary\obj\Debug\net6.0\ModelsLibrary.AssemblyInfo.cs
+D:\My Projects\ApiDemoRepo\ApiDemo\ModelsLibrary\obj\Debug\net6.0\ModelsLibrary.csproj.CoreCompileInputs.cache
+D:\My Projects\ApiDemoRepo\ApiDemo\ModelsLibrary\obj\Debug\net6.0\ModelsLibrary.dll
+D:\My Projects\ApiDemoRepo\ApiDemo\ModelsLibrary\obj\Debug\net6.0\refint\ModelsLibrary.dll
+D:\My Projects\ApiDemoRepo\ApiDemo\ModelsLibrary\obj\Debug\net6.0\ModelsLibrary.pdb
+D:\My Projects\ApiDemoRepo\ApiDemo\ModelsLibrary\obj\Debug\net6.0\ref\ModelsLibrary.dll

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "AOIiYJNiece+5WIpb9JQ3lw1gBn6JARkP9txHatgf/TubB7XY7swHr1gi1Na+2TGYlHE2s4QkgVisb1+G6q7wQ==",
+  "success": true,
+  "projectFilePath": "D:\\My Projects\\ApiDemoRepo\\ApiDemo\\ModelsLibrary\\ModelsLibrary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\waths\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.23\\microsoft.windowsdesktop.app.ref.6.0.23.nupkg.sha512",
+    "C:\\Users\\waths\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.23\\microsoft.netcore.app.ref.6.0.23.nupkg.sha512",
+    "C:\\Users\\waths\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.23\\microsoft.aspnetcore.app.ref.6.0.23.nupkg.sha512"
+  ],
+  "logs": []
+}
