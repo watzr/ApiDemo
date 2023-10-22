@@ -2,8 +2,6 @@
 {
     using ClientServices;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Extensions.Options;
-    using ModelsLibrary.Configurations;
     using ModelsLibrary.YouTubeDtos;
 
     public class YouTubeApiController : Controller
