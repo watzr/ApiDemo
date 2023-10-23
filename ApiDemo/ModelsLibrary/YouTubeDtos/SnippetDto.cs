@@ -10,7 +10,7 @@
 
         public string? Description { get; set; }
 
-        public Thumbnails? Thumbnails { get; set; }
+        public ThumbnailsDto? Thumbnails { get; set; }
 
         public string? ChannelTitle { get; set; }
 

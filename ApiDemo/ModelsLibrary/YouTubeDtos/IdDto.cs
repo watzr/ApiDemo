@@ -1,6 +1,6 @@
 ﻿namespace ModelsLibrary.YouTubeDtos
 {
-    public class Id
+    public class IdDto
     {
         public string? Kind { get; set; }
 

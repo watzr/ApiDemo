@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientServices", "ClientSer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelsLibrary", "ModelsLibrary\ModelsLibrary.csproj", "{B82C48A6-AC43-4461-892D-31224A3D009B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubeDataAccessLayer", "YouTubeDataAccessLayer\YouTubeDataAccessLayer.csproj", "{BFBE127D-D26C-4F2A-8F42-4AE3CDA4945D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{B82C48A6-AC43-4461-892D-31224A3D009B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B82C48A6-AC43-4461-892D-31224A3D009B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B82C48A6-AC43-4461-892D-31224A3D009B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BFBE127D-D26C-4F2A-8F42-4AE3CDA4945D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BFBE127D-D26C-4F2A-8F42-4AE3CDA4945D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BFBE127D-D26C-4F2A-8F42-4AE3CDA4945D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BFBE127D-D26C-4F2A-8F42-4AE3CDA4945D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,9 @@
 using ClientServices;
+using Microsoft.EntityFrameworkCore;
+using ModelsLibrary;
 using ModelsLibrary.Configurations;
+using ModelsLibrary.YouTubeModels;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,9 +20,12 @@ builder.Services.AddHttpClient<IYouTubeClientService, YouTubeClientService>("You
     client.Timeout = TimeSpan.FromSeconds(60);
 });
 
-builder.Services.Configure<ApiConfiguration>(builder.Configuration.GetSection(ApiConfiguration.SectionName));
+RegisterCustomLibrary(builder);
 
+builder.Services.Configure<ApiConfiguration>(builder.Configuration.GetSection(ApiConfiguration.SectionName));
 builder.Services.AddScoped<IYouTubeClientService, YouTubeClientService>();
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 
@@ -36,3 +43,21 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+static void RegisterCustomLibrary(WebApplicationBuilder builder)
+{
+    builder.Services.AddDbContext<YouTubeAnalyzerContext>(options =>
+    {
+        options.UseSqlServer(builder.Configuration["Connection:ConnectionString"]);
+    });
+    var serviceProvider = builder.Services.BuildServiceProvider();
+    var youTubeAnalyzerContext = serviceProvider.GetService<YouTubeAnalyzerContext>();
+
+    if (youTubeAnalyzerContext == null)
+    {
+        throw new ArgumentNullException(nameof(youTubeAnalyzerContext));
+    }
+
+    builder.Services.AddScoped<IDbContext, CustomDbContext>(_ => new CustomDbContext(youTubeAnalyzerContext));
+}

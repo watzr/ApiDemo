@@ -1,6 +1,6 @@
 ﻿namespace ModelsLibrary.YouTubeDtos
 {
-    public class PageInfo
+    public class PageInfoDto
     {
         public int TotalResults { get; set; }
 

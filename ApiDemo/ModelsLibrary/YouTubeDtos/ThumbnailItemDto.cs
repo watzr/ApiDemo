@@ -1,6 +1,6 @@
 ﻿namespace ModelsLibrary.YouTubeDtos
 {
-    public class ThumbnailItem
+    public class ThumbnailItemDto
     {
         public string? Url { get; set; }
 

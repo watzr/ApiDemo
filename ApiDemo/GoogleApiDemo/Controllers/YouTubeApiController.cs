@@ -14,9 +14,17 @@
         }
 
         [HttpGet("GetYouTubeChannel")]
-        public async Task<YouTubeChannel?> GetYouTubeChannelAsync()
+        public async Task<YouTubeChannelDto?> GetYouTubeChannelAsync()
         {
             var response = await _youTubeClientService.GetYouTubeChannelAsync("low carb", "video", "snippet", "LK");
+
+            return response;
+        }
+
+        [HttpGet("SetYouTubeChannel")]
+        public async Task<string?> SetYouTubeChannelAsync()
+        {
+            var response = await _youTubeClientService.SetYouTubeChannelAsync("low carb", "video", "snippet", "LK");
 
             return response;
         }

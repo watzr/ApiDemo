@@ -4,7 +4,10 @@
 
     public interface IYouTubeClientService
     {
-        Task<YouTubeChannel?> GetYouTubeChannelAsync(string query, string type, string part, string
+        Task<YouTubeChannelDto?> GetYouTubeChannelAsync(string query, string type, string part, string
+            regionCode);
+
+        Task<string> SetYouTubeChannelAsync(string query, string type, string part, string
             regionCode);
     }
 }
