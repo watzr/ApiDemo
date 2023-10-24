@@ -3,6 +3,7 @@
     using ClientServices;
     using Microsoft.AspNetCore.Mvc;
     using ModelsLibrary.YouTubeDtos;
+    using ModelsLibrary.YouTubeDtos.Request;
 
     public class YouTubeApiController : Controller
     {
@@ -14,17 +15,17 @@
         }
 
         [HttpGet("GetYouTubeChannel")]
-        public async Task<YouTubeChannelDto?> GetYouTubeChannelAsync()
+        public async Task<YouTubeChannelDto?> GetYouTubeChannelAsync(GetYouTubeChannelRequestDto request)
         {
-            var response = await _youTubeClientService.GetYouTubeChannelAsync("low carb", "video", "snippet", "LK");
+            var response = await _youTubeClientService.GetYouTubeChannelAsync(request.Query, request.Type, request.Part, request.RegionCode);
 
             return response;
         }
 
-        [HttpGet("SetYouTubeChannel")]
-        public async Task<string?> SetYouTubeChannelAsync()
+        [HttpPost("SetYouTubeChannel")]
+        public async Task<string?> SetYouTubeChannelAsync(SetYouTubeChannelRequestDto request)
         {
-            var response = await _youTubeClientService.SetYouTubeChannelAsync("low carb", "video", "snippet", "LK");
+            var response = await _youTubeClientService.SetYouTubeChannelAsync(request.Query, request.Type, request.Part, request.RegionCode);
 
             return response;
         }

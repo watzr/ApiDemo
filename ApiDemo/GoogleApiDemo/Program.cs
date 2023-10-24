@@ -1,5 +1,7 @@
 using ClientServices;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
 using ModelsLibrary;
 using ModelsLibrary.Configurations;
 using ModelsLibrary.YouTubeModels;
@@ -20,12 +22,18 @@ builder.Services.AddHttpClient<IYouTubeClientService, YouTubeClientService>("You
     client.Timeout = TimeSpan.FromSeconds(60);
 });
 
-RegisterCustomLibrary(builder);
+//RegisterCustomLibrary(builder);
+
+builder.Services.AddDbContext<YouTubeAnalyzerContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration["Connection:ConnectionString"]);
+});
+
 
 builder.Services.Configure<ApiConfiguration>(builder.Configuration.GetSection(ApiConfiguration.SectionName));
-builder.Services.AddScoped<IYouTubeClientService, YouTubeClientService>();
-
+builder.Services.AddScoped<IDbContext, CustomDbContext>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddScoped<IYouTubeClientService, YouTubeClientService>();
 
 var app = builder.Build();
 
@@ -45,19 +53,19 @@ app.MapControllers();
 app.Run();
 
 
-static void RegisterCustomLibrary(WebApplicationBuilder builder)
-{
-    builder.Services.AddDbContext<YouTubeAnalyzerContext>(options =>
-    {
-        options.UseSqlServer(builder.Configuration["Connection:ConnectionString"]);
-    });
-    var serviceProvider = builder.Services.BuildServiceProvider();
-    var youTubeAnalyzerContext = serviceProvider.GetService<YouTubeAnalyzerContext>();
+//static void RegisterCustomLibrary(WebApplicationBuilder builder)
+//{
+//    builder.Services.AddDbContext<YouTubeAnalyzerContext>(options =>
+//    {
+//        options.UseSqlServer(builder.Configuration["Connection:ConnectionString"]);
+//    });
+//    //var serviceProvider = builder.Services.BuildServiceProvider();
+//    //var youTubeAnalyzerContext = serviceProvider.GetService<YouTubeAnalyzerContext>();
 
-    if (youTubeAnalyzerContext == null)
-    {
-        throw new ArgumentNullException(nameof(youTubeAnalyzerContext));
-    }
+//    //if (youTubeAnalyzerContext == null)
+//    //{
+//    //    throw new ArgumentNullException(nameof(youTubeAnalyzerContext));
+//    //}
 
-    builder.Services.AddScoped<IDbContext, CustomDbContext>(_ => new CustomDbContext(youTubeAnalyzerContext));
-}
+//    builder.Services.AddTransient<IDbContext, CustomDbContext>();
+//}

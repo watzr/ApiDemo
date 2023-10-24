@@ -3,6 +3,7 @@
     using AutoMapper;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Options;
+    using ModelsLibrary;
     using ModelsLibrary.Configurations;
     using ModelsLibrary.YouTubeDtos;
     using ModelsLibrary.YouTubeModels;
@@ -14,11 +15,11 @@
 
         private readonly IOptions<ApiConfiguration> _apiConfiguration;
 
-        private readonly DbContext _dbContext;
+        private readonly IDbContext _dbContext;
 
         public readonly IMapper _mapper;
 
-        public YouTubeClientService(IHttpClientFactory httpClientFactory, IOptions<ApiConfiguration> apiConfiguration, DbContext dbContext, IMapper mapper)
+        public YouTubeClientService(IHttpClientFactory httpClientFactory, IOptions<ApiConfiguration> apiConfiguration, IDbContext dbContext, IMapper mapper)
         {
             _httpClient = new BaseHttpClient(httpClientFactory.CreateClient("YouTubeApi"));
             _apiConfiguration = apiConfiguration;
@@ -64,7 +65,8 @@
             if (data != null)
             {
                 var channel = _mapper.Map<YouTubeChannel>(data);
-                _dbContext.Add(channel);
+                await _dbContext.DbContext.AddAsync(channel).ConfigureAwait(false);
+                await _dbContext.DbContext.SaveChangesAsync().ConfigureAwait(false);
 
                 response = "Saved data successfully.";
             }
